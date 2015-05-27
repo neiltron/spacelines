@@ -1,0 +1,63 @@
+// bower:scss
+// endbower
+
+$circleSize: 25%;
+
+html, body {
+  background: #222;
+  height: 100%;
+  overflow: hidden;
+}
+
+main {
+  position: relative;
+  width: $circleSize;
+  height: $circleSize;
+  margin: 0 auto;
+  transform: rotate(-88.5deg) translateY(50%) translateX(-35%);
+  transformPerspective: 1000;
+
+  .line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+
+    width: $circleSize;
+    height: $circleSize;
+
+    transform-origin: left center;
+
+    span {
+      display: block;
+      height: 10px;
+      width: $circleSize / 1.15;
+      border-top: 1px solid #fafafa;
+      margin: 0 auto;
+
+      position: absolute;
+      bottom: 0;
+      right: 0;
+
+      transformPerspective: 1000;
+      transform: rotate(88deg);
+
+      &:after {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 200px;
+        background-color: #f0f;
+      }
+    }
+  }
+}
+
+.clearfix {
+  clear: both;
+  height: 0;
+  width: 100%;
+  float: none;
+}
