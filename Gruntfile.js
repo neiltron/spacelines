@@ -139,6 +139,13 @@ module.exports = function (grunt) {
       ]
     },
 
+    'gh-pages': {
+      options: {
+        base: 'dist'
+      },
+      src: ['**/*']
+    },
+
     // Mocha testing framework configuration options
     mocha: {
       all: {
@@ -409,6 +416,11 @@ module.exports = function (grunt) {
     'rev',
     'usemin',
     'htmlmin'
+  ]);
+
+  grunt.registerTask('push', [
+    'build',
+    'gh-pages'
   ]);
 
   grunt.registerTask('default', [
